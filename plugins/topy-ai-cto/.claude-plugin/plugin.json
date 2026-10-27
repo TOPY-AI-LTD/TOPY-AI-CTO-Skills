@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-cto",
+	"version": "0.1.0",
+	"description": "TOPY AI CTO core: connects the TOPY CTO MCP server and keeps CI green, releases evidenced and the platform healthy — CI watch, Connect the AI CTO, The CTO's goals, Morning engineering check.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cto",
+		"engineering",
+		"core"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

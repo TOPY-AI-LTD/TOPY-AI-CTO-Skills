@@ -1,0 +1,27 @@
+{
+	"name": "topy-ai-cto-all",
+	"version": "0.1.0",
+	"description": "All 17 TOPY AI CTO skills in one install: AI CTO core (MCP), CI, Code review & issues, Releases & deploys, Dependencies & secrets, Incidents & architecture.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cto",
+		"bundle"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy",
+	"dependencies": [
+		"topy-ai-cto",
+		"topy-ai-cto-ci",
+		"topy-ai-cto-code",
+		"topy-ai-cto-releases",
+		"topy-ai-cto-security",
+		"topy-ai-cto-platform"
+	]
+}

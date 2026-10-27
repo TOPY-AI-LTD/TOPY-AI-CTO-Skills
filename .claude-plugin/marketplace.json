@@ -1,0 +1,104 @@
+{
+	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+	"name": "topy-ai-cto",
+	"owner": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai"
+	},
+	"metadata": {
+		"description": "AI CTO skills for founders, built for TOPY.AI: a chief technology officer that keeps what is live working and every release backed by evidence — CI failures explained from their logs, flaky tests quarantined, pull requests reviewed for risk, release notes, a release gate, safe deploys and rollbacks, incident response, dependency alerts and secrets hygiene, through the TOPY AI GitHub App on the TOPY CTO MCP server (https://topy.ai/mcp/cto); standalone skills are engineering methods that work anywhere.",
+		"version": "0.1.0"
+	},
+	"plugins": [
+		{
+			"name": "topy-ai-cto",
+			"source": "./plugins/topy-ai-cto",
+			"description": "TOPY AI CTO core: connects the TOPY CTO MCP server and keeps CI green, releases evidenced and the platform healthy — CI watch, Connect the AI CTO, The CTO's goals, Morning engineering check.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"core"
+			]
+		},
+		{
+			"name": "topy-ai-cto-ci",
+			"source": "./plugins/topy-ai-cto-ci",
+			"description": "TOPY AI CTO CI skills (3): Why did CI fail?, CI hygiene, Flaky tests. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"ci"
+			]
+		},
+		{
+			"name": "topy-ai-cto-code",
+			"source": "./plugins/topy-ai-cto-code",
+			"description": "TOPY AI CTO Code review & issues skills (2): Engineering issue triage, Review a pull request. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"code"
+			]
+		},
+		{
+			"name": "topy-ai-cto-releases",
+			"source": "./plugins/topy-ai-cto-releases",
+			"description": "TOPY AI CTO Releases & deploys skills (4): Deploy safely, Release gate, Release notes, Roll back. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"releases"
+			]
+		},
+		{
+			"name": "topy-ai-cto-security",
+			"source": "./plugins/topy-ai-cto-security",
+			"description": "TOPY AI CTO Dependencies & secrets skills (2): Dependency and security alerts, Secrets hygiene. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"security"
+			]
+		},
+		{
+			"name": "topy-ai-cto-platform",
+			"source": "./plugins/topy-ai-cto-platform",
+			"description": "TOPY AI CTO Incidents & architecture skills (2): Architecture decision record, Incident response. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"engineering",
+				"platform"
+			]
+		},
+		{
+			"name": "topy-ai-cto-all",
+			"source": "./plugins/topy-ai-cto-all",
+			"description": "All 17 TOPY AI CTO skills in one install: AI CTO core (MCP), CI, Code review & issues, Releases & deploys, Dependencies & secrets, Incidents & architecture.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-cto",
+				"bundle"
+			]
+		}
+	]
+}

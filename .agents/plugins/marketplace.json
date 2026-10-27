@@ -1,0 +1,80 @@
+{
+	"name": "topy-ai-cto",
+	"interface": {
+		"displayName": "TOPY.AI AI CTO skills"
+	},
+	"plugins": [
+		{
+			"name": "topy-ai-cto",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cto-ci",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto-ci"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cto-code",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto-code"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cto-releases",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto-releases"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cto-security",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto-security"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-cto-platform",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-cto-platform"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		}
+	]
+}

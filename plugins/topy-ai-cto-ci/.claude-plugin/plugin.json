@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-cto-ci",
+	"version": "0.1.0",
+	"description": "TOPY AI CTO CI skills (3): Why did CI fail?, CI hygiene, Flaky tests. Add the topy-ai-cto plugin too, for the core skills and the CTO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-cto",
+		"engineering",
+		"ci"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

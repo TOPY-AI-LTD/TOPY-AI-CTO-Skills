@@ -1,0 +1,62 @@
+{
+	"name": "@topy-ai/cto-skills",
+	"version": "0.1.0",
+	"description": "Install the TOPY.AI AI CTO skills (CI failures explained from their logs, flaky tests, CI hygiene, PR review, issue triage, release notes, a release gate, safe deploys and rollbacks, dependency alerts, secrets hygiene, incident response, architecture decisions) into Claude Code, Codex, Pi, Cursor, Gemini CLI, OpenCode, Copilot and other coding agents, for one project or for your user. Also a Pi package.",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills.git",
+		"directory": "packages/skills"
+	},
+	"bugs": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills/issues",
+	"keywords": [
+		"topy.ai",
+		"ai-cto",
+		"founders",
+		"engineering",
+		"github",
+		"ci",
+		"github-actions",
+		"code-review",
+		"releases",
+		"devops",
+		"incident-response",
+		"skills",
+		"agent-skills",
+		"claude-code",
+		"codex",
+		"pi-package",
+		"pi",
+		"cursor",
+		"gemini-cli",
+		"opencode",
+		"mcp"
+	],
+	"bin": {
+		"cto-skills": "bin/cto-skills.mjs"
+	},
+	"pi": {
+		"skills": [
+			"./skills"
+		]
+	},
+	"files": [
+		"bin",
+		"skills",
+		"catalog.json",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"prepack": "node scripts/bundle.mjs",
+		"test": "node scripts/bundle.mjs && node --test scripts/cli.test.mjs"
+	}
+}

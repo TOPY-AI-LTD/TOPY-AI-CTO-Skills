@@ -1,0 +1,394 @@
+{
+	"name": "TOPY.AI AI CTO skills",
+	"description": "AI CTO skills for founders, built for TOPY.AI: a chief technology officer that keeps what is live working and every release backed by evidence — CI failures explained from their logs, flaky tests quarantined, pull requests reviewed for risk, release notes, a release gate, safe deploys and rollbacks, incident response, dependency alerts and secrets hygiene, through the TOPY AI GitHub App on the TOPY CTO MCP server (https://topy.ai/mcp/cto); standalone skills are engineering methods that work anywhere.",
+	"version": "0.1.0",
+	"updated": "2026-10-27",
+	"publisher": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"install": {
+		"claude_code": "/plugin marketplace add TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+		"npm": "npx @topy-ai/cto-skills install",
+		"mcp_server": "https://topy.ai/mcp/cto"
+	},
+	"tiers": {
+		"core": "Runs on the TOPY MCP server; needs a TOPY account.",
+		"connected": "Uses TOPY data and actions when the MCP server is connected; works on its own otherwise.",
+		"standalone": "An engineering method that works with any agent; can use TOPY where it fits."
+	},
+	"categories": [
+		{
+			"id": "core",
+			"name": "AI CTO core (MCP)",
+			"plugin": "topy-ai-cto",
+			"count": 4
+		},
+		{
+			"id": "ci",
+			"name": "CI",
+			"plugin": "topy-ai-cto-ci",
+			"count": 3
+		},
+		{
+			"id": "code",
+			"name": "Code review & issues",
+			"plugin": "topy-ai-cto-code",
+			"count": 2
+		},
+		{
+			"id": "releases",
+			"name": "Releases & deploys",
+			"plugin": "topy-ai-cto-releases",
+			"count": 4
+		},
+		{
+			"id": "security",
+			"name": "Dependencies & secrets",
+			"plugin": "topy-ai-cto-security",
+			"count": 2
+		},
+		{
+			"id": "platform",
+			"name": "Incidents & architecture",
+			"plugin": "topy-ai-cto-platform",
+			"count": 2
+		}
+	],
+	"skills": [
+		{
+			"id": "topy-cto-ci-watch",
+			"name": "CI watch",
+			"category": "core",
+			"category_name": "AI CTO core (MCP)",
+			"plugin": "topy-ai-cto",
+			"tier": "core",
+			"summary": "How the AI CTO watches CI around the clock: a GitHub webhook per run, an email only on a failure or a recovery, with the failing jobs and the log lines.",
+			"mcp_tools": [
+				"cto_github",
+				"cto_events",
+				"cto_ci_run",
+				"cto_ci_log"
+			],
+			"pairs_with": [
+				"topy-cto-ci-failure",
+				"topy-cto-flaky-tests"
+			],
+			"path": "plugins/topy-ai-cto/skills/topy-cto-ci-watch/SKILL.md"
+		},
+		{
+			"id": "topy-cto-connect",
+			"name": "Connect the AI CTO",
+			"category": "core",
+			"category_name": "AI CTO core (MCP)",
+			"plugin": "topy-ai-cto",
+			"tier": "core",
+			"summary": "Connect the TOPY CTO MCP server and check what it can see: the GitHub App and its repositories, CI, alerts and service health.",
+			"mcp_tools": [
+				"account_get",
+				"cto_github",
+				"cto_repos",
+				"cto_ci_runs",
+				"cto_alerts",
+				"cto_health",
+				"dashboard_link"
+			],
+			"pairs_with": [
+				"topy-cto-goals",
+				"topy-cto-morning-check"
+			],
+			"path": "plugins/topy-ai-cto/skills/topy-cto-connect/SKILL.md"
+		},
+		{
+			"id": "topy-cto-goals",
+			"name": "The CTO's goals",
+			"category": "core",
+			"category_name": "AI CTO core (MCP)",
+			"plugin": "topy-ai-cto",
+			"tier": "core",
+			"summary": "The AI CTO's standing goals and its status report for the CEO: uptime, deploy frequency and change failure rate, each with source and date or 'no data'.",
+			"mcp_tools": [
+				"cto_status_report",
+				"cto_health",
+				"cto_ci_runs",
+				"cto_releases"
+			],
+			"pairs_with": [
+				"topy-cto-morning-check",
+				"topy-cto-release-gate"
+			],
+			"path": "plugins/topy-ai-cto/skills/topy-cto-goals/SKILL.md"
+		},
+		{
+			"id": "topy-cto-morning-check",
+			"name": "Morning engineering check",
+			"category": "core",
+			"category_name": "AI CTO core (MCP)",
+			"plugin": "topy-ai-cto",
+			"tier": "core",
+			"summary": "Each morning: service health, CI on the default branches, pull requests waiting and anything red — the one thing to fix first.",
+			"mcp_tools": [
+				"cto_health",
+				"cto_github",
+				"cto_repos",
+				"cto_ci_runs",
+				"cto_prs",
+				"cto_events"
+			],
+			"pairs_with": [
+				"topy-cto-ci-failure",
+				"topy-cto-pr-review"
+			],
+			"path": "plugins/topy-ai-cto/skills/topy-cto-morning-check/SKILL.md"
+		},
+		{
+			"id": "topy-cto-ci-failure",
+			"name": "Why did CI fail?",
+			"category": "ci",
+			"category_name": "CI",
+			"plugin": "topy-ai-cto-ci",
+			"tier": "connected",
+			"summary": "Explain a failed GitHub Actions run from its jobs and logs: the step, the cause in the log's own words, flaky or real, and the fix — then re-run or open an issue.",
+			"mcp_tools": [
+				"cto_ci_runs",
+				"cto_ci_run",
+				"cto_ci_log",
+				"cto_compare",
+				"cto_ci_rerun",
+				"cto_issue_create"
+			],
+			"pairs_with": [
+				"topy-cto-flaky-tests",
+				"topy-cto-ci-watch"
+			],
+			"path": "plugins/topy-ai-cto-ci/skills/topy-cto-ci-failure/SKILL.md"
+		},
+		{
+			"id": "topy-cto-ci-hygiene",
+			"name": "CI hygiene",
+			"category": "ci",
+			"category_name": "CI",
+			"plugin": "topy-ai-cto-ci",
+			"tier": "standalone",
+			"summary": "Keep CI fast and trustworthy: required checks, caching, a time budget, pinned actions, least-privilege tokens and no secrets in logs.",
+			"mcp_tools": [],
+			"pairs_with": [
+				"topy-cto-flaky-tests",
+				"topy-cto-secrets-hygiene"
+			],
+			"path": "plugins/topy-ai-cto-ci/skills/topy-cto-ci-hygiene/SKILL.md"
+		},
+		{
+			"id": "topy-cto-flaky-tests",
+			"name": "Flaky tests",
+			"category": "ci",
+			"category_name": "CI",
+			"plugin": "topy-ai-cto-ci",
+			"tier": "connected",
+			"summary": "Tell a flaky test from a real failure, quarantine it with an owner and a deadline, and fix the cause (time, order, network, shared state) instead of re-running forever.",
+			"mcp_tools": [
+				"cto_ci_runs",
+				"cto_ci_run",
+				"cto_ci_log",
+				"cto_ci_rerun",
+				"cto_issue_create",
+				"cto_issues"
+			],
+			"pairs_with": [
+				"topy-cto-ci-failure",
+				"topy-cto-ci-hygiene"
+			],
+			"path": "plugins/topy-ai-cto-ci/skills/topy-cto-flaky-tests/SKILL.md"
+		},
+		{
+			"id": "topy-cto-issue-triage",
+			"name": "Engineering issue triage",
+			"category": "code",
+			"category_name": "Code review & issues",
+			"plugin": "topy-ai-cto-code",
+			"tier": "connected",
+			"summary": "Turn bug reports and CI findings into issues worth fixing: reproduce, size, label, owner — and close what isn't actionable.",
+			"mcp_tools": [
+				"cto_issues",
+				"cto_issue_create",
+				"cto_issue_comment"
+			],
+			"pairs_with": [
+				"topy-cto-ci-failure",
+				"topy-cto-pr-review"
+			],
+			"path": "plugins/topy-ai-cto-code/skills/topy-cto-issue-triage/SKILL.md"
+		},
+		{
+			"id": "topy-cto-pr-review",
+			"name": "Review a pull request",
+			"category": "code",
+			"category_name": "Code review & issues",
+			"plugin": "topy-ai-cto-code",
+			"tier": "connected",
+			"summary": "Review a pull request for what matters before merge: what changed, whether checks pass, and the risks — migrations, auth, money, secrets, irreversible steps, missing tests.",
+			"mcp_tools": [
+				"cto_pr",
+				"cto_pr_checks",
+				"cto_compare",
+				"cto_pr_comment"
+			],
+			"pairs_with": [
+				"topy-cto-release-gate",
+				"topy-cto-ci-failure"
+			],
+			"path": "plugins/topy-ai-cto-code/skills/topy-cto-pr-review/SKILL.md"
+		},
+		{
+			"id": "topy-cto-deploy-safely",
+			"name": "Deploy safely",
+			"category": "releases",
+			"category_name": "Releases & deploys",
+			"plugin": "topy-ai-cto-releases",
+			"tier": "connected",
+			"summary": "Ship to production in small steps: plan, the Founder's approval, deploy the gated build, canary, check live matches what was built, then report — or roll back.",
+			"mcp_tools": [
+				"cto_checks",
+				"cto_health",
+				"cto_ci_runs",
+				"cto_ci_run"
+			],
+			"pairs_with": [
+				"topy-cto-release-gate",
+				"topy-cto-rollback"
+			],
+			"path": "plugins/topy-ai-cto-releases/skills/topy-cto-deploy-safely/SKILL.md"
+		},
+		{
+			"id": "topy-cto-release-gate",
+			"name": "Release gate",
+			"category": "releases",
+			"category_name": "Releases & deploys",
+			"plugin": "topy-ai-cto-releases",
+			"tier": "connected",
+			"summary": "Decide whether a build may ship: CI green on the exact commit, checks and QA passed, migrations reversible, rollback ready, and someone watching — evidence for each.",
+			"mcp_tools": [
+				"cto_checks",
+				"cto_ci_runs",
+				"cto_compare",
+				"cto_alerts",
+				"cto_health"
+			],
+			"pairs_with": [
+				"topy-cto-deploy-safely",
+				"topy-cto-rollback"
+			],
+			"path": "plugins/topy-ai-cto-releases/skills/topy-cto-release-gate/SKILL.md"
+		},
+		{
+			"id": "topy-cto-release-notes",
+			"name": "Release notes",
+			"category": "releases",
+			"category_name": "Releases & deploys",
+			"plugin": "topy-ai-cto-releases",
+			"tier": "connected",
+			"summary": "Draft release notes from the commits since the last release, grouped as new, improved and fixed in words customers understand — nothing is published.",
+			"mcp_tools": [
+				"cto_releases",
+				"cto_release_notes",
+				"cto_ci_runs"
+			],
+			"pairs_with": [
+				"topy-cto-release-gate",
+				"topy-cto-deploy-safely"
+			],
+			"path": "plugins/topy-ai-cto-releases/skills/topy-cto-release-notes/SKILL.md"
+		},
+		{
+			"id": "topy-cto-rollback",
+			"name": "Roll back",
+			"category": "releases",
+			"category_name": "Releases & deploys",
+			"plugin": "topy-ai-cto-releases",
+			"tier": "connected",
+			"summary": "When a release hurts, restore service first: redeploy the last good build, keep data safe, confirm recovery, then find the cause.",
+			"mcp_tools": [
+				"cto_releases",
+				"cto_ci_runs",
+				"cto_health",
+				"cto_issue_create"
+			],
+			"pairs_with": [
+				"topy-cto-incident",
+				"topy-cto-deploy-safely"
+			],
+			"path": "plugins/topy-ai-cto-releases/skills/topy-cto-rollback/SKILL.md"
+		},
+		{
+			"id": "topy-cto-dependency-alerts",
+			"name": "Dependency and security alerts",
+			"category": "security",
+			"category_name": "Dependencies & secrets",
+			"plugin": "topy-ai-cto-security",
+			"tier": "connected",
+			"summary": "Read Dependabot, code-scanning and secret-scanning alerts, fix what is exploitable first, and say plainly which alert kinds GitHub isn't showing and why.",
+			"mcp_tools": [
+				"cto_alerts",
+				"cto_issue_create",
+				"cto_issues"
+			],
+			"pairs_with": [
+				"topy-cto-secrets-hygiene",
+				"topy-cto-pr-review"
+			],
+			"path": "plugins/topy-ai-cto-security/skills/topy-cto-dependency-alerts/SKILL.md"
+		},
+		{
+			"id": "topy-cto-secrets-hygiene",
+			"name": "Secrets hygiene",
+			"category": "security",
+			"category_name": "Dependencies & secrets",
+			"plugin": "topy-ai-cto-security",
+			"tier": "standalone",
+			"summary": "Keep keys and tokens out of code, logs and chats: where secrets live, least privilege, rotation, and what to do in the first hour after one leaks.",
+			"mcp_tools": [],
+			"pairs_with": [
+				"topy-cto-dependency-alerts",
+				"topy-cto-incident"
+			],
+			"path": "plugins/topy-ai-cto-security/skills/topy-cto-secrets-hygiene/SKILL.md"
+		},
+		{
+			"id": "topy-cto-architecture-decision",
+			"name": "Architecture decision record",
+			"category": "platform",
+			"category_name": "Incidents & architecture",
+			"plugin": "topy-ai-cto-platform",
+			"tier": "standalone",
+			"summary": "Record a technical decision so it can be revisited: the context, the options with their costs, the choice, its consequences, and what would make us change it.",
+			"mcp_tools": [],
+			"pairs_with": [
+				"topy-cto-goals",
+				"topy-cto-pr-review"
+			],
+			"path": "plugins/topy-ai-cto-platform/skills/topy-cto-architecture-decision/SKILL.md"
+		},
+		{
+			"id": "topy-cto-incident",
+			"name": "Incident response",
+			"category": "platform",
+			"category_name": "Incidents & architecture",
+			"plugin": "topy-ai-cto-platform",
+			"tier": "connected",
+			"summary": "When something customers use is down or wrong: one lead, stop the harm, restore service, communicate on a clock, then a blameless review with fixes.",
+			"mcp_tools": [
+				"cto_health",
+				"cto_ci_runs",
+				"cto_releases",
+				"cto_events",
+				"cto_issue_create"
+			],
+			"pairs_with": [
+				"topy-cto-rollback",
+				"topy-cto-secrets-hygiene"
+			],
+			"path": "plugins/topy-ai-cto-platform/skills/topy-cto-incident/SKILL.md"
+		}
+	]
+}

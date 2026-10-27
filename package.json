@@ -1,0 +1,19 @@
+{
+	"name": "topy-ai-cto-skills",
+	"private": true,
+	"version": "0.1.0",
+	"description": "AI CTO skills for founders, built for TOPY.AI: a chief technology officer that keeps what is live working and every release backed by evidence — CI failures explained from their logs, flaky tests quarantined, pull requests reviewed for risk, release notes, a release gate, safe deploys and rollbacks, incident response, dependency alerts and secrets hygiene, through the TOPY AI GitHub App on the TOPY CTO MCP server (https://topy.ai/mcp/cto); standalone skills are engineering methods that work anywhere.",
+	"license": "MIT",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-CTO-Skills",
+	"keywords": [
+		"pi-package",
+		"agent-skills",
+		"ai-cto",
+		"topy.ai"
+	],
+	"pi": {
+		"skills": [
+			"./plugins/*/skills"
+		]
+	}
+}
